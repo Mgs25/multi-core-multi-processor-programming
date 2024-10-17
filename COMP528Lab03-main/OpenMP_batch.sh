@@ -9,11 +9,14 @@ cores=${SLURM_CPUS_PER_TASK:-1} #Gets the requested number of cores when sbatch 
 
 export OMP_NUM_THREADS=$cores   #Exports the OMP_NUM_THREADS variable
 
+echo 'Started job!'
+
 # 1. Add code here to compile a certain program
 gcc HelloOpenMP.c -fopenmp out
 
 # 2. Add code here to run the program
 ./out
 
+echo 'Ended job'
 # 3. Then submit this script to the compute nodes. 
 #    Instructions for how to do this are in the lab
